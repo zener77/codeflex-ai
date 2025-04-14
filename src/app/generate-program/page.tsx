@@ -239,7 +239,12 @@ const GenerateProgramPage = () => {
             <div className="aspect-video flex flex-col items-center justify-center p-6 relative">
               {/* User Image */}
               <div className="relative size-32 mb-4">
-                <img src={user?.imageUrl} alt="User" className="object-cover rounded-full" />
+                <img
+                  src={user?.imageUrl}
+                  alt="User"
+                  // ADD THIS "size-full" class to make it rounded on all images
+                  className="size-full object-cover rounded-full"
+                />
               </div>
 
               <h2 className="text-xl font-bold text-foreground">You</h2>

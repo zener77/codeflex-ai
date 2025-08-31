@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
+//import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -27,9 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ConvexClerkProvider>
+   // <ConvexClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <h1> <strong>love to love u baby baby</strong> </h1>
+          <br />
           <Navbar />
 
           {/* GRID BACKGROUND */}
@@ -42,6 +44,6 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
-    </ConvexClerkProvider>
+    //</ConvexClerkProvider>
   );
 }

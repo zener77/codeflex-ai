@@ -1,28 +1,58 @@
 "use client";
 
-import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+//import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 import { DumbbellIcon, HomeIcon, UserIcon, ZapIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
+
 const Navbar = () => {
-  const { isSignedIn } = useUser();
+  // Comment out the useUser hook.
+  /*
+  const { user } = useUser();
+  */
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-md border-b border-border py-3">
-      <div className="container mx-auto flex items-center justify-between">
-        {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="p-1 bg-primary/10 rounded">
-            <ZapIcon className="w-4 h-4 text-primary" />
-          </div>
-          <span className="text-xl font-bold font-mono">
-            code<span className="text-primary">flex</span>.ai
-          </span>
-        </Link>
+    <nav className="flex justify-between items-center p-4 bg-gray-800 text-white">
+      <div className="text-xl font-bold">My App</div>
+      <div className="flex items-center space-x-4">
+        {/* Comment out any Clerk-related components */}
+        {/*
+        {user ? (
+          <UserButton />
+        ) : (
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+        )}
+        */}
+        
+        {/* You can add a simple link or button here for now */}
+        <a href="/login" className="px-4 py-2 border rounded">Login/Signup</a>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+// const Navbar = () => {
+//   const { isSignedIn } = useUser();
+
+//   return (
+//     <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-md border-b border-border py-3">
+//       <div className="container mx-auto flex items-center justify-between">
+//         {/* LOGO */}
+//         <Link href="/" className="flex items-center gap-2">
+//           <div className="p-1 bg-primary/10 rounded">
+//             <ZapIcon className="w-4 h-4 text-primary" />
+//           </div>
+//           <span className="text-xl font-bold font-mono">
+//             code<span className="text-primary">flex</span>.ai
+//           </span>
+//         </Link>
 
         {/* NAVIGATION */}
-        <nav className="flex items-center gap-5">
+        {/* <nav className="flex items-center gap-5">
           {isSignedIn ? (
             <>
               <Link
@@ -80,4 +110,4 @@ const Navbar = () => {
     </header>
   );
 };
-export default Navbar;
+export default Navbar; */}

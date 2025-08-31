@@ -1,6 +1,6 @@
 "use client";
 
-import { useUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
@@ -18,8 +18,12 @@ import {
 } from "@/components/ui/accordion";
 
 const ProfilePage = () => {
-  const { user } = useUser();
-  const userId = user?.id as string;
+  // Commented out Clerk user hook to disable authentication:
+  // const { user } = useUser();
+  // const userId = user?.id as string;
+
+  // Use a fixed guest user ID instead
+  const userId = "guest-user-id-123";
 
   const allPlans = useQuery(api.plans.getUserPlans, { userId });
   const [selectedPlanId, setSelectedPlanId] = useState<null | string>(null);
@@ -32,9 +36,10 @@ const ProfilePage = () => {
 
   return (
     <section className="relative z-10 pt-12 pb-32 flex-grow container mx-auto px-4">
-      <ProfileHeader user={user} />
+      {/* ProfileHeader originally takes user info. Since user is undefined, nothing from user is passed */}
+      <ProfileHeader user={null} />
 
-      {allPlans && allPlans?.length > 0 ? (
+      {allPlans && allPlans.length > 0 ? (
         <div className="space-y-8">
           {/* PLAN SELECTOR */}
           <div className="relative backdrop-blur-sm border border-border p-6">
@@ -214,4 +219,5 @@ const ProfilePage = () => {
     </section>
   );
 };
+
 export default ProfilePage;

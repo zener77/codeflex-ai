@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ConvexClerkProvider>
+    // <ConvexClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <Navbar />
@@ -42,6 +42,6 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
-    </ConvexClerkProvider>
+    // </ConvexClerkProvider>
   );
 }

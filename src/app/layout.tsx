@@ -27,7 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<<<<<<< HEAD
    // <ConvexClerkProvider>
+=======
+    // <ConvexClerkProvider>
+>>>>>>> 64ccd99ad33553fe7ea8fdcbb436bd3b0071a4d3
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <h1> <strong>love to love u baby baby</strong> </h1>
@@ -44,6 +48,10 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
+<<<<<<< HEAD
     //</ConvexClerkProvider>
+=======
+    // </ConvexClerkProvider>
+>>>>>>> 64ccd99ad33553fe7ea8fdcbb436bd3b0071a4d3
   );
 }
